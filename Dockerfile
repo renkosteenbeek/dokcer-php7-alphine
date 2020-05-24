@@ -1,7 +1,6 @@
 FROM renkosteenbeek/php7:1.0
 
 # Add Xdebug
-ENV XDEBUG_ENABLED=0
 ENV XDEBUG_CONFIG='idekey=PHPSTORM'
 RUN apk add --no-cache $PHPIZE_DEPS \
     && pecl install xdebug-2.9.5 \
