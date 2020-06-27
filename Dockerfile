@@ -22,3 +22,6 @@ RUN apk add --no-cache $PHPIZE_DEPS \
 ENV OPCACHE_VALIDATE_TIMESTAMP=1
 COPY opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
+# Add Sendmail. To make it work, a valid config file must be set in /etc/ssmtp/ssmtp.conf (not included).
+RUN echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
