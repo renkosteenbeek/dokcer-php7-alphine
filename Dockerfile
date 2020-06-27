@@ -3,7 +3,7 @@ FROM php:7.4-fpm-alpine
 
 RUN apk update; \
     apk upgrade; \
-    apk add zlib-dev libpng-dev jpeg-dev libzip-dev;
+    apk add zlib-dev libpng-dev jpeg-dev libzip-dev ssmtp;
 
 # Add couple of php modules
 RUN docker-php-ext-configure gd --with-jpeg; \
